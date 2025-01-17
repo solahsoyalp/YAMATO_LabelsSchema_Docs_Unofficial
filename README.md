@@ -1,4 +1,4 @@
-# UnofficialYAMATO_LabelsSchema_Docs
+# YAMATO_LabelsSchema_Docs_Unofficial
 
 ## 概要
 
@@ -23,7 +23,7 @@
 
 1. リポジトリをクローンします。
    ```bash
-   git clone https://github.com/solahsoyalp/UnofficialYAMATO_LabelsSchema_Docs.git
+   git clone https://github.com/solahsoyalp/YAMATO_LabelsSchema_Docs_Unofficial.git
    ```
 2. `docs` フォルダ内の各ファイルを参照してください。
 

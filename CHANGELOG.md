@@ -10,6 +10,7 @@
 - データレイアウトの一次情報を `spec/*.json` に集約（source of truth 化）。
 - `tools/build.py`（spec → docs テーブル + samples/*_列名.csv を生成、`--check` で同期検証）と `tools/extract_spec.py`（ブートストラップ）を追加。
 - `spec/README.md` を追加。
+- GitHub Actions `spec-check`（PR / main push 時に `tools/build.py --check` を自動実行）を追加。
 
 ### Changed
 - `docs/*.md` の項目テーブルを `spec/*.json` からの自動生成に変更（`<!-- AUTO-GENERATED -->` で明示）。

@@ -1,5 +1,7 @@
 # YAMATO_LabelsSchema_Docs_Unofficial
 
+[![spec-check](https://github.com/solahsoyalp/YAMATO_LabelsSchema_Docs_Unofficial/actions/workflows/spec-check.yml/badge.svg)](https://github.com/solahsoyalp/YAMATO_LabelsSchema_Docs_Unofficial/actions/workflows/spec-check.yml)
+
 ヤマト運輸 **B2クラウド** のCSVデータレイアウト（非公式まとめ）
 *Unofficial reference for the CSV data layouts of YAMATO Transport's "B2 Cloud" shipping system.*
 

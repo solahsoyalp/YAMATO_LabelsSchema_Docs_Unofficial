@@ -1,0 +1,43 @@
+name: spec-check
+
+# spec/*.json と生成物（docs のテーブル / samples の列名CSV）の同期を検証する。
+# データ修正は spec/*.json を編集し、`python3 tools/build.py` で再生成すること。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'spec/**'
+      - 'docs/**'
+      - 'samples/**'
+      - 'tools/**'
+      - '.github/workflows/spec-check.yml'
+  pull_request:
+    paths:
+      - 'spec/**'
+      - 'docs/**'
+      - 'samples/**'
+      - 'tools/**'
+      - '.github/workflows/spec-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: spec と生成物の同期を検証
+        run: python3 tools/build.py --check
+
+      - name: 差分がある場合の案内
+        if: failure()
+        run: |
+          echo "::error::spec/*.json と docs/samples が同期していません。"
+          echo "ローカルで 'python3 tools/build.py' を実行し、生成物をコミットしてください。"

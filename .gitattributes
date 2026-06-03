@@ -1,0 +1,2 @@
+# サンプルCSVはShift_JIS(CP932)/CRLFのため、gitによる改行・エンコーディング変換を無効化
+samples/*.csv -text

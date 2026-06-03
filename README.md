@@ -61,6 +61,17 @@ This repository organizes the CSV data layouts used by YAMATO Transport's "B2 Cl
    ```
 2. `docs` フォルダ内の各ファイルを参照してください。索引は [`docs/INDEX.md`](docs/INDEX.md)。
 
+## データの一次情報 / Source of truth
+
+データレイアウトの正本は [`spec/*.json`](spec/) です。`docs/*.md` の項目テーブルと `samples/*_列名.csv` は、これらの JSON から [`tools/build.py`](tools/build.py) で生成されます。**修正は `spec/*.json` を編集**し、次を実行してください。
+
+```bash
+python3 tools/build.py          # docs と samples を再生成
+python3 tools/build.py --check  # spec と生成物の同期を検証（CI 用）
+```
+
+詳細は [`spec/README.md`](spec/README.md) を参照してください。
+
 ## フィードバック / Contributing
 
 本リポジトリの内容についてのフィードバックや修正提案は歓迎します。[CONTRIBUTING.md](CONTRIBUTING.md) を参照のうえ、Issue や Pull Request を通じてご連絡ください。変更履歴は [CHANGELOG.md](CHANGELOG.md) にまとめています。

@@ -14,15 +14,22 @@
 
 ### Pull Request（修正）
 1. リポジトリを Fork し、ブランチを作成します。
-2. 変更を行い、可能なら出典を明記します。
-3. PR を作成します（テンプレートに沿って記入）。
+2. **データレイアウトの修正は `spec/*.json` を編集します**（`docs/*.md` の項目テーブルは生成物です）。
+3. `python3 tools/build.py` を実行して `docs/` と `samples/` を再生成します。
+4. 可能なら出典を明記し、PR を作成します（テンプレートに沿って記入）。
+
+> 📌 **データの一次情報は [`spec/*.json`](spec/) です。**
+> `docs/*.md` の `<!-- AUTO-GENERATED -->` で囲まれた項目テーブルと `samples/*_列名.csv` は
+> `spec` から [`tools/build.py`](tools/build.py) で生成されます。詳細は [`spec/README.md`](spec/README.md)。
+> マーカー外の本文（前提条件・注記など）は `docs/` で直接編集します。
 
 ## 記載ルール
 
 - **出典を必ず確認**：ヤマト運輸の公式PDF / 公式FAQ を一次情報とします。
   - 現行（B2クラウド）: <https://bmypage.kuronekoyamato.co.jp/bmypage/pdf/new_exchange1.pdf>
-- **確認日を更新**：資料を更新したら、当該資料冒頭の「最終確認日」と `CHANGELOG.md` を更新してください。
-- **整合性**：データレイアウトの項目数と、対応する `samples/*.csv` の列数を一致させてください。
+- **編集対象**：データレイアウトは `spec/*.json` を編集し、`tools/build.py` で再生成します（`docs/` の表を直接編集しない）。
+- **確認日を更新**：資料を更新したら、`spec/*.json` の `last_verified`・出典と `CHANGELOG.md` を更新してください。
+- **整合性**：`python3 tools/build.py --check` が通る状態（spec と docs/samples が同期）でコミットしてください。
 - **サンプルCSV**：文字コードは **Shift_JIS(CP932)**、改行は **CRLF** を維持してください（`.gitattributes` で管理）。
 - **項目名・文字数・必須区分**は公式表記に合わせてください（「○」必須、「（○）」条件付き必須）。
 

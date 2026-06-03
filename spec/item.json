@@ -1,0 +1,80 @@
+{
+  "slug": "item",
+  "title": "品名データレイアウト 入出力用（B2クラウド）",
+  "system": "B2クラウド",
+  "last_verified": "2026-06-03",
+  "sources": [
+    {
+      "label": "B2クラウド データレイアウト（公式PDF）",
+      "url": "https://bmypage.kuronekoyamato.co.jp/bmypage/pdf/new_exchange1.pdf"
+    }
+  ],
+  "file_formats": [
+    {
+      "format": ".CSV",
+      "note": "CSV（カンマ区切り）形式"
+    },
+    {
+      "format": ".XLS / .XLSX",
+      "note": "Excel形式"
+    }
+  ],
+  "required_columns": [
+    "宅急便 必須"
+  ],
+  "has_eazy_column": false,
+  "doc": "docs/B2品名データレイアウト入出力用.md",
+  "sample_csv": "samples/B2品名_列名.csv",
+  "fields": [
+    {
+      "no": 1,
+      "name": "品名コード1",
+      "type": "半角英数字",
+      "max": "30文字",
+      "required": {
+        "宅急便 必須": "○"
+      },
+      "note": ""
+    },
+    {
+      "no": 2,
+      "name": "品名1",
+      "type": "全角/半角",
+      "max": "25文字/50文字",
+      "required": {
+        "宅急便 必須": "○"
+      },
+      "note": ""
+    },
+    {
+      "no": 3,
+      "name": "荷扱い1",
+      "type": "全角/半角",
+      "max": "10文字/20文字",
+      "required": {
+        "宅急便 必須": ""
+      },
+      "note": ""
+    },
+    {
+      "no": 4,
+      "name": "荷扱い2",
+      "type": "全角/半角",
+      "max": "10文字/20文字",
+      "required": {
+        "宅急便 必須": ""
+      },
+      "note": ""
+    },
+    {
+      "no": 5,
+      "name": "記事",
+      "type": "全角/半角",
+      "max": "22文字/44文字",
+      "required": {
+        "宅急便 必須": ""
+      },
+      "note": ""
+    }
+  ]
+}

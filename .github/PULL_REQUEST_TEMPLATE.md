@@ -12,7 +12,9 @@
 
 ## チェックリスト
 - [ ] 公式の一次情報（公式PDF / FAQ）で確認した
-- [ ] 該当資料冒頭の「最終確認日」を更新した
+- [ ] データの変更は `spec/*.json` を編集して行った（`docs/` の表を直接編集していない）
+- [ ] `python3 tools/build.py` を実行し、`docs/` と `samples/` を再生成した
+- [ ] `python3 tools/build.py --check` が通る（spec と生成物が同期している）
+- [ ] `spec/*.json` の `last_verified`・出典を更新した
 - [ ] `CHANGELOG.md` に変更を記載した
-- [ ] 項目数と対応する `samples/*.csv` の列数が一致している
 - [ ] サンプルCSVを変更した場合、Shift_JIS(CP932)・CRLF を維持している
